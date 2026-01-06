@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RhythmEngine - Beat Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1 class="app-title">⚡ RhythmEngine</h1>
+            <p class="app-subtitle">Professional Beat Production</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Control Panel -->
+            <section class="control-panel">
+                <div class="playback-controls">
+                    <button class="control-btn play-btn">▶️ PLAY</button>
+                    <button class="control-btn pause-btn">⏸️ PAUSE</button>
+                    <button class="control-btn stop-btn">⏹️ STOP</button>
+                </div>
+                
+                <div class="tempo-section">
+                    <label for="tempo-slider" class="tempo-label">TEMPO: <span class="tempo-value">120</span> BPM</label>
+                    <input type="range" id="tempo-slider" class="tempo-slider" min="60" max="200" value="120">
+                </div>
+                
+                <div class="utility-controls">
+                    <button class="utility-btn save-btn">💾 SAVE</button>
+                    <button class="utility-btn export-btn">📤 EXPORT</button>
+                    <button class="utility-btn clear-btn">🗑️ CLEAR</button>
+                </div>
+            </section>
+
+            <!-- Beat Grid -->
+            <section class="beat-grid-container">
+                <h2 class="grid-title">BEAT MATRIX</h2>
+                <div class="beat-grid">
+                    <button class="beat-pad" data-sound="kick">KICK</button>
+                    <button class="beat-pad" data-sound="snare">SNARE</button>
+                    <button class="beat-pad" data-sound="hihat">HI-HAT</button>
+                    <button class="beat-pad" data-sound="crash">CRASH</button>
+                    <button class="beat-pad" data-sound="kick2">KICK 2</button>
+                    <button class="beat-pad" data-sound="snare2">SNARE 2</button>
+                    <button class="beat-pad" data-sound="openhat">OPEN HAT</button>
+                    <button class="beat-pad" data-sound="perc">PERC</button>
+                    <button class="beat-pad" data-sound="bass">BASS</button>
+                    <button class="beat-pad" data-sound="synth">SYNTH</button>
+                    <button class="beat-pad" data-sound="lead">LEAD</button>
+                    <button class="beat-pad" data-sound="fx">FX</button>
+                    <button class="beat-pad" data-sound="vocal">VOCAL</button>
+                    <button class="beat-pad" data-sound="chord">CHORD</button>
+                    <button class="beat-pad" data-sound="arp">ARP</button>
+                    <button class="beat-pad" data-sound="drop">DROP</button>
+                </div>
+            </section>
+
+            <!-- Save/Export Panel -->
+            <section class="file-panel">
+                <h3 class="panel-title">PROJECT MANAGEMENT</h3>
+                <div class="file-controls">
+                    <div class="file-input-group">
+                        <label for="project-name" class="file-label">PROJECT NAME:</label>
+                        <input type="text" id="project-name" class="project-input" placeholder="My Awesome Beat" value="Untitled Beat">
+                    </div>
+                    <div class="export-options">
+                        <label class="file-label">EXPORT FORMAT:</label>
+                        <select class="format-select">
+                            <option value="wav">WAV (High Quality)</option>
+                            <option value="mp3">MP3 (Compressed)</option>
+                            <option value="midi">MIDI (Notes Only)</option>
+                            <option value="project">Project File</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+
