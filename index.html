@@ -3,80 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RhythmEngine - Beat Maker</title>
+    <title>RhythmEngine - Modern Beat Maker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="app-container">
-        <header class="app-header">
-            <h1 class="app-title">⚡ RhythmEngine</h1>
-            <p class="app-subtitle">Professional Beat Production</p>
+    <div class="studio-container">
+        <!-- Header with main controls -->
+        <header class="control-panel">
+            <div class="logo">
+                <h1>RhythmEngine</h1>
+                <div class="status-indicator"></div>
+            </div>
+            <div class="main-controls">
+                <button class="control-btn play-btn">
+                    <span class="icon">▶</span>
+                    <span>Play</span>
+                </button>
+                <button class="control-btn pause-btn">
+                    <span class="icon">⏸</span>
+                    <span>Pause</span>
+                </button>
+                <button class="control-btn record-btn">
+                    <span class="icon">●</span>
+                    <span>Record</span>
+                </button>
+                <button class="control-btn save-btn">
+                    <span class="icon">💾</span>
+                    <span>Save</span>
+                </button>
+            </div>
+            <div class="bpm-control">
+                <label>BPM</label>
+                <div class="bpm-wheel-container">
+                    <input type="range" class="bpm-wheel" min="0" max="140" value="120">
+                    <div class="bpm-display">120</div>
+                </div>
+            </div>
         </header>
 
-        <main class="main-content">
-            <!-- Control Panel -->
-            <section class="control-panel">
-                <div class="playback-controls">
-                    <button class="control-btn play-btn">▶️ PLAY</button>
-                    <button class="control-btn pause-btn">⏸️ PAUSE</button>
-                    <button class="control-btn stop-btn">⏹️ STOP</button>
+        <div class="main-workspace">
+            <!-- Collapsible beats panel -->
+            <aside class="beats-panel">
+                <div class="panel-header">
+                    <h3>Beat Library</h3>
+                    <button class="toggle-panel">←</button>
                 </div>
-                
-                <div class="tempo-section">
-                    <label for="tempo-slider" class="tempo-label">TEMPO: <span class="tempo-value">120</span> BPM</label>
-                    <input type="range" id="tempo-slider" class="tempo-slider" min="60" max="200" value="120">
-                </div>
-                
-                <div class="utility-controls">
-                    <button class="utility-btn save-btn">💾 SAVE</button>
-                    <button class="utility-btn export-btn">📤 EXPORT</button>
-                    <button class="utility-btn clear-btn">🗑️ CLEAR</button>
-                </div>
-            </section>
-
-            <!-- Beat Grid -->
-            <section class="beat-grid-container">
-                <h2 class="grid-title">BEAT MATRIX</h2>
-                <div class="beat-grid">
-                    <button class="beat-pad" data-sound="kick">KICK</button>
-                    <button class="beat-pad" data-sound="snare">SNARE</button>
-                    <button class="beat-pad" data-sound="hihat">HI-HAT</button>
-                    <button class="beat-pad" data-sound="crash">CRASH</button>
-                    <button class="beat-pad" data-sound="kick2">KICK 2</button>
-                    <button class="beat-pad" data-sound="snare2">SNARE 2</button>
-                    <button class="beat-pad" data-sound="openhat">OPEN HAT</button>
-                    <button class="beat-pad" data-sound="perc">PERC</button>
-                    <button class="beat-pad" data-sound="bass">BASS</button>
-                    <button class="beat-pad" data-sound="synth">SYNTH</button>
-                    <button class="beat-pad" data-sound="lead">LEAD</button>
-                    <button class="beat-pad" data-sound="fx">FX</button>
-                    <button class="beat-pad" data-sound="vocal">VOCAL</button>
-                    <button class="beat-pad" data-sound="chord">CHORD</button>
-                    <button class="beat-pad" data-sound="arp">ARP</button>
-                    <button class="beat-pad" data-sound="drop">DROP</button>
-                </div>
-            </section>
-
-            <!-- Save/Export Panel -->
-            <section class="file-panel">
-                <h3 class="panel-title">PROJECT MANAGEMENT</h3>
-                <div class="file-controls">
-                    <div class="file-input-group">
-                        <label for="project-name" class="file-label">PROJECT NAME:</label>
-                        <input type="text" id="project-name" class="project-input" placeholder="My Awesome Beat" value="Untitled Beat">
+                <div class="beats-list">
+                    <div class="beat-category">
+                        <h4>Free Collection</h4>
+                        <div class="beat-item">
+                            <div class="beat-info">
+                                <span class="beat-name">Classic Rock</span>
+                                <span class="beat-bpm">120 BPM</span>
+                            </div>
+                            <button class="load-btn">Load</button>
+                        </div>
+                        <div class="beat-item">
+                            <div class="beat-info">
+                                <span class="beat-name">Hip Hop Base</span>
+                                <span class="beat-bpm">95 BPM</span>
+                            </div>
+                            <button class="load-btn">Load</button>
+                        </div>
+                        <div class="beat-item">
+                            <div class="beat-info">
+                                <span class="beat-name">Jazz Swing</span>
+                                <span class="beat-bpm">140 BPM</span>
+                            </div>
+                            <button class="load-btn">Load</button>
+                        </div>
                     </div>
-                    <div class="export-options">
-                        <label class="file-label">EXPORT FORMAT:</label>
-                        <select class="format-select">
-                            <option value="wav">WAV (High Quality)</option>
-                            <option value="mp3">MP3 (Compressed)</option>
-                            <option value="midi">MIDI (Notes Only)</option>
-                            <option value="project">Project File</option>
-                        </select>
+                    <div class="beat-category">
+                        <h4>Premium Collection</h4>
+                        <div class="beat-item premium">
+                            <div class="beat-info">
+                                <span class="beat-name">Studio Pro Pack</span>
+                                <span class="beat-bpm">Various BPM</span>
+                            </div>
+                            <button class="buy-btn">$2.99</button>
+                        </div>
+                        <div class="beat-item premium">
+                            <div class="beat-info">
+                                <span class="beat-name">Electronic Vibes</span>
+                                <span class="beat-bpm">128 BPM</span>
+                            </div>
+                            <button class="buy-btn">$1.99</button>
+                        </div>
                     </div>
                 </div>
-            </section>
-        </main>
+            </aside>
+
+            <!-- Main beat creation area -->
+            <main class="beat-maker">
+                <div class="sequence-display">
+                    <div class="sequence-header">
+                        <h3>Beat Sequence</h3>
+                        <div class="sequence-controls">
+                            <span class="step-counter">Step 1/8</span>
+                        </div>
+                    </div>
+                    <div class="pattern-grid">
+                        <div class="step active"></div>
+                        <div class="step"></div>
+                        <div class="step"></div>
+                        <div class="step"></div>
+                        <div class="step"></div>
+                        <div class="step"></div>
+                        <div class="step"></div>
+                        <div class="step"></div>
+                    </div>
+                </div>
+
+                <div class="instrument-grid">
+                    <div class="instrument-section drums">
+                        <div class="section-header">
+                            <h4>Drums</h4>
+                            <div class="volume-indicator">
+                                <div class="volume-bar"></div>
+                                <div class="volume-bar"></div>
+                                <div class="volume-bar active"></div>
+                                <div class="volume-bar active"></div>
+                                <div class="volume-bar active"></div>
+                            </div>
+                        </div>
+                        <div class="instrument-buttons">
+                            <button class="instrument-btn">Kick</button>
+                            <button class="instrument-btn">Snare</button>
+                            <button class="instrument-btn">Hi-Hat</button>
+                            <button class="instrument-btn">Crash</button>
+                        </div>
+                    </div>
+
+                    <div class="instrument-section bass">
+                        <div class="section-header">
+                            <h4>Bass</h4>
+                            <div class="volume-indicator">
+                                <div class="volume-bar"></div>
+                                <div class="volume-bar active"></div>
+                                <div class="volume-bar active"></div>
+                                <div class="volume-bar active"></div>
+                                <div class="volume-bar active"></div>
+                            </div>
+                        </div>
+                        <div class="instrument-buttons">
+                            <button class="instrument-btn">Low E</button>
+                            <button class="instrument-btn">A</button>
+                            <button class="instrument-btn">D</button>
+                            <button class="instrument-btn">G</button>
+                        </div>
+                    </div>
+
+                    <div class="instrument-section piano">
+                        <div class="section-header">
+                            <h4>Piano</h4>
+                            <div class="volume-indicator">
+                                <div class="volume-bar"></div>
+                                <div class="volume-bar"></div>
+                                <div class="volume-bar active"></div>
+                                <div class="volume-bar active"></div>
+                                <div class="volume-bar"></div>
+                            </div>
+                        </div>
+                        <div class="instrument-buttons">
+                            <button class="instrument-btn">C</button>
+                            <button class="instrument-btn">D</button>
+                            <button class="instrument-btn">E</button>
+                            <button class="instrument-btn">F</button>
+                        </div>
+                    </div>
+
+                    <div class="instrument-section guitar">
+                        <div class="section-header">
+                            <h4>Guitar</h4>
+                            <div class="volume-indicator">
+                                <div class="volume-bar"></div>
+                                <div class="volume-bar active"></div>
+                                <div class="volume-bar active"></div>
+                                <div class="volume-bar active"></div>
+                                <div class="volume-bar"></div>
+                            </div>
+                        </div>
+                        <div class="instrument-buttons">
+                            <button class="instrument-btn">E Chord</button>
+                            <button class="instrument-btn">A Chord</button>
+                            <button class="instrument-btn">D Chord</button>
+                            <button class="instrument-btn">G Chord</button>
+                        </div>
+                    </div>
+
+                    <div class="instrument-section trumpet">
+                        <div class="section-header">
+                            <h4>Trumpet</h4>
+                            <div class="volume-indicator">
+                                <div class="volume-bar"></div>
+                                <div class="volume-bar"></div>
+                                <div class="volume-bar"></div>
+                                <div class="volume-bar active"></div>
+                                <div class="volume-bar active"></div>
+                            </div>
+                        </div>
+                        <div class="instrument-buttons">
+                            <button class="instrument-btn">C Note</button>
+                            <button class="instrument-btn">D Note</button>
+                            <button class="instrument-btn">E Note</button>
+                            <button class="instrument-btn">F Note</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
 </body>
 </html>
